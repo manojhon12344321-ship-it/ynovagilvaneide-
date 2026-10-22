@@ -2,11 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YNOVA - Quer reduzir sua conta de luz?</title>
+<title>YNOVA - IA Base 12.990 kWh da sua imagem</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<style>body{font-family:Inter,sans-serif;background:#fff}.input{border:1.5px solid #e8e0d8;background:white;border-radius:16px;padding:14px 16px;width:100%;font-size:15px;outline:none}.input:focus{border-color:#ff5a00}.pdf-drop{border:2px dashed #ff5a00;background:#fff7f0;border-radius:20px;padding:24px;text-align:center}</style>
+<style>body{font-family:Inter,sans-serif;background:#fff}.input{border:1.5px solid #e8e0d8;background:white;border-radius:16px;padding:14px 16px;width:100%;font-size:15px;outline:none}.input:focus{border-color:#ff5a00}.pdf-drop{border:2px dashed #ff5a00;background:#fff7f0;border-radius:20px;padding:24px;text-align:center}.fixo{background:#fdf0e6;border:1.5px solid #ff5a00 !important;font-weight:900}</style>
 </head>
 <body class="pb-24 bg-white">
 
@@ -15,8 +15,8 @@
 <div class="flex gap-3"><span>🔔</span><span>💬</span></div>
 </header>
 
-<!-- BLOCO QUE VOCÊ PEDIU PARA IMPLEMENTAR -->
-<div class="bg-black text-white px-4 py-8 text-center">
+<!-- SUA CHAMADA NOVA -->
+<div class="bg-black text-white px-4 py-7 text-center">
 <p class="text-[26px] font-black leading-tight">⚡ QUER REDUZIR SUA CONTA DE LUZ? ⚡</p>
 <div class="bg-[#ff5a00] text-white rounded-2xl p-5 mt-6 text-left max-w-[420px] mx-auto">
 <p class="font-black text-[15px]">📋 O QUE VOCÊ PRECISA PARA SIMULAR:</p>
@@ -28,7 +28,7 @@
 </div>
 <p class="mt-4 font-black text-[18px] animate-pulse">👇 NÃO PERCA TEMPO! CLIQUE AGORA E SIMULE:</p>
 </div>
-<button onclick="document.getElementById('cadastro').scrollIntoView({behavior:'smooth'})" class="mt-6 bg-white text-black px-8 py-4 rounded-full font-black text-[16px] shadow-xl">SIMULAR AGORA EM 1 MINUTO</button>
+<button onclick="document.getElementById('cadastro').scrollIntoView({behavior:'smooth'})" class="mt-6 bg-white text-black px-8 py-4 rounded-full font-black text-[16px]">SIMULAR AGORA EM 1 MINUTO</button>
 </div>
 
 <section class="w-full">
@@ -38,49 +38,104 @@
 <img src="banner4_como_funciona.jpg" class="w-full block" alt="banner4">
 </section>
 
-<div id="cadastro" class="max-w-[480px] mx-auto p-4">
+<div id="cadastro" class="max-w-[500px] mx-auto p-4">
 
+<!-- PDF IA COM BASE DA SUA IMAGEM -->
 <div class="pdf-drop">
-<p class="font-black text-[16px]">📄 Upload do PDF da conta - IA automática</p>
-<p class="text-[12px] text-gray-500 mt-1">Fatura quitada de até 2 meses - IA lê e soma na hora</p>
+<p class="font-black text-[16px]">📄 Upload do PDF da conta - IA soma a partir da base da imagem</p>
+<p class="text-[11px] text-gray-500 mt-1">Base fixa da sua imagem: 12.990 kWh = R$ 1.187,94 → R$ 991,72 | Economia R$ 196,22</p>
 <input type="file" id="pdfConta" accept=".pdf" class="hidden" onchange="lerPDFConta(this)">
 <button onclick="document.getElementById('pdfConta').click()" class="mt-3 bg-[#ff5a00] text-white px-6 py-3 rounded-full font-black text-sm">📎 SELECIONAR FATURA EM PDF</button>
-<p id="pdfStatus" class="text-xs mt-3 font-bold"></p>
+<p id="pdfStatus" class="text-xs mt-3 font-bold text-green-600"></p>
 <div id="pdfTextoExtraido" class="hidden"></div>
 </div>
 
-<div class="bg-[#fdf0e6] rounded-[18px] p-4 mt-6">
-<p class="text-[11px] font-bold tracking-widest text-[#6b5a4a]">ECONOMIA DO CLIENTE (A PARTIR DE 20%)</p>
-<p class="text-[22px] font-bold mt-1">a partir de</p>
-<p class="text-[32px] font-black">R$ <span id="economiaApp">3.830,22</span> <span class="text-[16px] font-normal text-gray-500">/mês</span></p>
-<p class="text-[13px] text-[#5a5a5a] mt-2 leading-snug">Conta cai de R$ <span id="deApp">19.151,11</span> pra no máximo R$ <span id="paraApp">15.320,89</span> na energia · <span id="kwhApp">16111</span> kWh compensáveis dos <span id="lidosApp">17933</span> lidos · <span id="mesesApp">13</span> meses de consumo lidos</p>
-<p class="text-[13px] text-[#5a5a5a] mt-3">Esse é o mínimo que garanto agora.</p>
+<!-- ECONOMIA COM VALORES DA SUA IMAGEM -->
+<div class="bg-[#fdf0e6] rounded-[18px] p-4 mt-6 border-2 border-orange-300">
+<p class="text-[11px] font-bold tracking-widest text-[#6b5a4a]">ECONOMIA - IA USA VALORES DA SUA IMAGEM COMO BASE</p>
+<div class="grid grid-cols-3 gap-2 mt-3 text-[11px] font-bold bg-black text-white rounded-xl p-3">
+<div></div><div>Hoje</div><div class="text-orange-400">Com a Ynova</div>
+<div>⚡ Energia (12.990 kWh)</div><div>R$ 1.187,94</div><div>R$ 991,72</div>
+<div>📄 Mínimo distribuidora (6 taxas)</div><div>R$ 196,22</div><div>R$ 991,72</div>
+<div>💼 Você paga</div><div>R$ 991,72</div><div>R$ 991,72</div>
+</div>
+<p class="text-[22px] font-bold mt-3">a partir de</p>
+<p class="text-[34px] font-black">R$ <span id="economiaApp">196,22</span> <span class="text-[16px] font-normal text-gray-500">/mês</span></p>
+<p class="text-[13px] text-[#5a5a5a] mt-1">Conta de R$ <span id="deApp">1.187,94</span> pra no máximo R$ <span id="paraApp">991,72</span> na energia · <span id="kwhApp">12.990</span> kWh · Até 200% de desconto ao ano</p>
+<div class="mt-3 bg-black text-white rounded-xl p-3">
+<p class="font-black text-[14px]">QUANTO FICA NO SEU BOLSO?</p>
+<p class="text-[13px] mt-1">1 ano: <span class="bg-[#ff5a00] px-2 py-1 rounded-full font-black">R$ <span id="ano1App">2.354,64</span></span></p>
+<p class="text-[13px] mt-1">3 anos: <span class="bg-[#ff5a00] px-2 py-1 rounded-full font-black">R$ <span id="ano3App">7.063,92</span></span></p>
+<p class="text-[13px] mt-1">5 anos: <span class="bg-[#ff5a00] px-2 py-1 rounded-full font-black">R$ <span id="ano5App">11.773,20</span></span></p>
+<p class="text-[11px] mt-2">Você pode ECONOMIZAR até 200% na sua conta de energia! ao ano</p>
+</div>
 </div>
 
+<!-- VALORES FIXOS DA IA -->
+<div class="mt-6 bg-white rounded-2xl p-4 border-2 border-green-200">
+<p class="font-black text-[12px]">VALORES FIXOS - IA SOMA A PARTIR DAQUI - BASE DA SUA IMAGEM</p>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<div><label class="text-[10px] font-bold">Consumo base kWh</label><input id="consumo" value="12990" class="input fixo" readonly></div>
+<div><label class="text-[10px] font-bold">Economia/mês fixa R$</label><input id="economiaMes" value="196,22" class="input fixo text-green-700" readonly></div>
+<div><label class="text-[10px] font-bold">Conta DE fixa R$ (Hoje)</label><input id="contaDe" value="1.187,94" class="input fixo" readonly></div>
+<div><label class="text-[10px] font-bold">Conta PARA fixa R$ (Com Ynova)</label><input id="contaPara" value="991,72" class="input fixo" readonly></div>
+<div><label class="text-[10px] font-bold">Mínimo distribuidora R$</label><input id="minimo" value="196,22" class="input fixo" readonly></div>
+<div><label class="text-[10px] font-bold">kWh compensáveis</label><input id="kwhComp" value="12990" class="input fixo" readonly></div>
+<div><label class="text-[10px] font-bold">1 ano bolso R$</label><input id="ano1" value="2.354,64" class="input fixo" readonly></div>
+<div><label class="text-[10px] font-bold">3 anos bolso R$</label><input id="ano3" value="7.063,92" class="input fixo" readonly></div>
+<div><label class="text-[10px] font-bold">5 anos bolso R$</label><input id="ano5" value="11.773,20" class="input fixo" readonly></div>
+<div><label class="text-[10px] font-bold">Desconto até 200% ao ano</label><input value="200%" class="input fixo" readonly></div>
+</div>
+<input id="tipo" value="100" class="hidden"><input id="valorTotal" value="1187,94" class="hidden"><input id="tarifa" value="0,09142" class="hidden"><input id="ilum" value="0" class="hidden"><input id="impostos" value="196,22" class="hidden"><input id="kwhJaComp" value="0" class="hidden"><input id="percDesconto" value="16,52" class="hidden"><input id="distribuidora" value="Neoenergia Coelba" class="hidden"><input id="meses" value="12" class="hidden">
+</div>
+
+<!-- DADOS DO CLIENTE -->
 <div class="mt-6">
 <p class="text-[12px] font-bold tracking-widest text-gray-500">DADOS DO CLIENTE</p>
-<div class="mt-3"><label class="font-bold">Nome completo do titular</label><input id="nome" placeholder="Nome do titular da fatura" class="input mt-1 uppercase font-bold"></div>
+<div class="mt-3"><label class="font-bold">Nome completo do titular</label><input id="nome" placeholder="NOME DO TITULAR DA FATURA" class="input mt-1 uppercase font-bold"></div>
 <div class="grid grid-cols-2 gap-3 mt-4">
 <div><label class="font-bold">CPF ou CNPJ do titular</label><input id="cpf" placeholder="Documento em mãos" class="input mt-1"></div>
 <div><label class="font-bold">Telefone com WhatsApp</label><input id="tel" placeholder="(73) 99847-4104" class="input mt-1"></div>
 </div>
+<div class="mt-4"><label class="font-bold">E-mail (contrato vai aqui)</label><input id="email" placeholder="E-mail do titular" class="input mt-1"></div>
+<div class="mt-4"><label class="font-bold">Endereço da unidade consumidora</label><input id="endereco" placeholder="Rua, número" class="input mt-1 uppercase"></div>
+<div class="grid grid-cols-2 gap-3 mt-4">
+<div><label class="font-bold">Bairro</label><input id="bairro" placeholder="Bairro" class="input mt-1"></div>
+<div><label class="font-bold">Cidade - Estado</label><input id="cidade" value="Teixeira de Freitas - BA" class="input mt-1"></div>
+</div>
+<div class="mt-4"><label class="font-bold">CEP</label><input id="cep" placeholder="CEP" class="input mt-1"></div>
 </div>
 
-<div class="hidden">
-<input id="valorTotal" value="22.823,83"><input id="consumo" value="17.933"><input id="tarifa" value="1,188698"><select id="tipo"><option value="100" selected>Trifásico 100kWh</option><option value="50">Bifásico 50</option><option value="30">Monofásico 30</option></select><input id="ilum" value="52,22"><input id="impostos" value="5.957,14"><input id="kwhJaComp" value="1.722"><input id="percDesconto" value="20" type="number"><input id="distribuidora" value="Neoenergia Coelba"><input id="meses" value="13"><input id="contaDe" value="19.151,11"><input id="contaPara" value="15.320,89"><input id="kwhComp" value="16.111"><input id="economiaMes" value="3.830,22"><input id="ano1" value="45.962,64"><input id="ano3" value="137.887,92"><input id="ano5" value="229.813,20"><input id="email"><input id="endereco"><input id="bairro"><input id="cidade" value="Teixeira de Freitas - BA"><input id="cep" value="45993-261">
+<!-- COMUNICADO OFICIAL DOCUMENTAÇÃO -->
+<div class="mt-8 bg-white border-2 border-orange-200 rounded-[20px] p-5">
+<p class="font-black text-center text-[15px]">📢 COMUNICADO IMPORTANTE | DOCUMENTAÇÃO OBRIGATÓRIA</p>
+<p class="text-[11px] text-gray-500 text-center mt-2">Prezados consultores, para garantir maior agilidade na conferência e validação das propostas, relação de <b>documentos obrigatórios</b> conforme perfil.</p>
+<div class="mt-4 flex gap-2">
+<button onclick="setPerfilDoc('PF')" id="bPF" class="flex-1 border px-3 py-2 rounded-full text-xs font-bold">PF</button>
+<button onclick="setPerfilDoc('PJ')" id="bPJ" class="flex-1 border-2 border-orange-500 bg-orange-50 px-3 py-2 rounded-full text-xs font-bold">PJ</button>
+<button onclick="setPerfilDoc('COND')" id="bCOND" class="flex-1 border px-3 py-2 rounded-full text-xs font-bold">CONDOMÍNIOS</button>
+</div>
+<div id="docConteudo" class="mt-4 space-y-2"></div>
+<div id="listaDocs" class="mt-4 space-y-2"></div>
+<div class="mt-4 bg-yellow-50 border border-yellow-300 rounded-xl p-3">
+<p class="font-black text-[12px]">⚠️ ATENÇÃO!</p>
+<p class="text-[11px] mt-1">Todos os documentos devem estar <b>válidos, completos e legíveis</b>, preferencialmente em formato PDF. O envio correto evita pendências, retrabalho e atrasos.</p>
+<p class="text-[11px] mt-2 font-black">Equipe YNOVA 🧡</p>
+</div>
+<div class="flex justify-between mt-3 text-xs font-bold bg-gray-50 p-2 rounded-xl border"><span id="progDocs">0/2 documentos</span><span id="statusDocs" class="text-red-500">Pendente</span></div>
 </div>
 
 <div class="mt-8 grid grid-cols-1 gap-2">
-<button onclick="enviarMeuWhats()" class="bg-[#25D366] text-white py-5 rounded-2xl font-black text-[16px]">📲 SIMULAR E ENVIAR NO MEU WHATSAPP (73) 99847-4104</button>
-<button onclick="gerarPDF()" class="bg-black text-white py-3 rounded-2xl font-bold text-xs">📄 Gerar contrato PDF</button>
-<p class="text-[11px] text-center text-gray-400 mt-2">Fatura quitada, até 2 meses, média 260 kWh mínimo - Sem instalação - Lei 14.300</p>
+<button onclick="enviarMeuWhats()" class="bg-[#25D366] text-white py-5 rounded-2xl font-black text-[16px]">📲 ENVIAR SIMULAÇÃO 12.990 kWh NO MEU WHATSAPP (73) 99847-4104</button>
+<button onclick="gerarPDF()" class="bg-black text-white py-3 rounded-2xl font-bold text-xs">📄 Gerar contrato PDF com base 12.990 kWh</button>
+<button onclick="salvarFirebase()" class="bg-blue-600 text-white py-3 rounded-2xl font-bold text-xs">💾 Salvar no Firebase ynovagilvaneide</button>
 </div>
 
 <div class="mt-6 border rounded-2xl p-3 text-xs"><p class="font-bold">Clientes salvos - ynovagilvaneide</p><div id="listaFirebase" class="mt-2 text-gray-400">Nenhum ainda</div></div>
 
 </div>
 
-<nav class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around items-center py-2 max-w-[480px] mx-auto">
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around items-center py-2 max-w-[500px] mx-auto">
 <div class="flex flex-col items-center text-gray-400"><span>🏠</span><span class="text-[10px]">Início</span></div>
 <div class="flex flex-col items-center"><span>📄</span><span class="text-[10px] font-bold border-b-2 border-black">Vendas</span></div>
 <div class="w-14 h-14 bg-[#ff5a00] rounded-full flex items-center justify-center text-white text-3xl -mt-6">+</div>
@@ -93,19 +148,79 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebas
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 const firebaseConfig = { apiKey: "AIzaSyBQcyHdxtaAFG-jC1fOKvkVqne7-JPLaCY", authDomain: "ynovagilvaneide.firebaseapp.com", projectId: "ynovagilvaneide", storageBucket: "ynovagilvaneide.firebasestorage.app", messagingSenderId: "302450012958", appId: "1:302450012958:web:f27b289a48121bb4818f0f" };
 const app = initializeApp(firebaseConfig); const db = getFirestore(app);
-async function loadClientes(){ try{ const q=query(collection(db,"ynova_clientes"),orderBy("criadoEm","desc")); const snap=await getDocs(q); const lista=document.getElementById('listaFirebase'); lista.innerHTML=''; if(snap.empty){ lista.innerHTML='Nenhum ainda'; return; } snap.forEach(d=>{ const c=d.data(); const div=document.createElement('div'); div.className='bg-gray-50 border rounded-xl p-2 mt-1'; div.innerHTML=`<b>${c.nome||''}</b> - R$${c.economiaMes||''}/mês`; lista.appendChild(div); }); }catch(e){ document.getElementById('listaFirebase').innerHTML=e.message; } }
+async function loadClientes(){ try{ const q=query(collection(db,"ynova_clientes"),orderBy("criadoEm","desc")); const snap=await getDocs(q); const lista=document.getElementById('listaFirebase'); lista.innerHTML=''; if(snap.empty){ lista.innerHTML='Nenhum ainda'; return; } snap.forEach(d=>{ const c=d.data(); const div=document.createElement('div'); div.className='bg-gray-50 border rounded-xl p-2 mt-1'; div.innerHTML=`<b>${c.nome||''}</b> - R$${c.economiaMes||''}/mês - ${c.consumo||''}kWh`; lista.appendChild(div); }); }catch(e){ document.getElementById('listaFirebase').innerHTML=e.message; } }
 loadClientes();
-window.salvarFirebase=async function(){ try{ const data={ nome:document.getElementById('nome').value, cpf:document.getElementById('cpf').value, tel:document.getElementById('tel').value, economiaMes:document.getElementById('economiaMes').value, contaDe:document.getElementById('contaDe').value, contaPara:document.getElementById('contaPara').value, kwhComp:document.getElementById('kwhComp').value, consumo:document.getElementById('consumo').value, valorTotal:document.getElementById('valorTotal').value, tarifa:document.getElementById('tarifa').value, ano1:document.getElementById('ano1').value, pdfTexto:document.getElementById('pdfTextoExtraido').innerText||'', criadoEm:serverTimestamp() }; await addDoc(collection(db,"ynova_clientes"),data); return data; }catch(e){ alert('Erro: '+e.message); } };
-window.enviarMeuWhats=async function(){ if(!document.getElementById('nome').value || !document.getElementById('cpf').value){ alert('Preencha nome e CPF do titular'); return; } const cliente=await window.salvarFirebase(); const meuWhats='5573998474104'; const nome=cliente?.nome||document.getElementById('nome').value; const econ=document.getElementById('economiaMes').value; const de=document.getElementById('contaDe').value; const para=document.getElementById('contaPara').value; const kwh=document.getElementById('kwhComp').value; const consumo=document.getElementById('consumo').value; const msg=`*YNOVA - QUER REDUZIR CONTA DE LUZ*%0A%0A⚡ CLIENTE QUER SIMULAR:%0ANome: ${nome}%0ACPF/CNPJ: ${document.getElementById('cpf').value}%0ATel: ${document.getElementById('tel').value}%0A%0A📋 CHECKLIST OK:%0A✅ Fatura quitada digitalizada%0A📅 Até 2 meses anteriores%0A⚡ Consumo: ${consumo} kWh (média 260 kWh)%0A🆔 Doc titular em mãos%0A%0A*IA LEU E SOMOU:*%0AConsumo: ${consumo} kWh%0AkWh compensáveis: ${kwh}%0ADE: R$ ${de} PARA: R$ ${para}%0A*Economia: R$ ${econ}/mês*%0A1 ano: R$ ${document.getElementById('ano1').value}%0A3 anos: R$ ${document.getElementById('ano3').value}%0A5 anos: R$ ${document.getElementById('ano5').value}%0A%0APDF: ${(document.getElementById('pdfTextoExtraido').innerText||'').substring(0,500)}`; window.open(`https://wa.me/${meuWhats}?text=${msg}`, '_blank'); };
+window.salvarFirebase=async function(){ try{ const data={ nome:document.getElementById('nome').value, cpf:document.getElementById('cpf').value, tel:document.getElementById('tel').value, email:document.getElementById('email').value, endereco:document.getElementById('endereco').value, bairro:document.getElementById('bairro').value, cidade:document.getElementById('cidade').value, cep:document.getElementById('cep').value, consumo:document.getElementById('consumo').value, economiaMes:document.getElementById('economiaMes').value, contaDe:document.getElementById('contaDe').value, contaPara:document.getElementById('contaPara').value, kwhComp:document.getElementById('kwhComp').value, ano1:document.getElementById('ano1').value, ano3:document.getElementById('ano3').value, ano5:document.getElementById('ano5').value, base:'12.990kWh imagem - 1187,94->991,72', pdfTexto:document.getElementById('pdfTextoExtraido').innerText||'', criadoEm:serverTimestamp() }; await addDoc(collection(db,"ynova_clientes"),data); alert('✅ Salvo: '+data.nome+' - Base 12.990kWh - R$'+data.economiaMes+'/mês'); loadClientes(); return data; }catch(e){ alert('Erro: '+e.message); } };
+window.enviarMeuWhats=async function(){ if(!document.getElementById('nome').value){ alert('Preencha nome do titular'); return; } const cliente=await window.salvarFirebase(); const meuWhats='5573998474104'; const nome=cliente?.nome||document.getElementById('nome').value; const econ=document.getElementById('economiaMes').value; const de=document.getElementById('contaDe').value; const para=document.getElementById('contaPara').value; const kwh=document.getElementById('kwhComp').value; const consumo=document.getElementById('consumo').value; const msg=`*YNOVA - BASE 12.990 kWh - DE ONDE VEM O DESCONTO?*%0A%0ACliente: ${nome}%0ACPF: ${document.getElementById('cpf').value}%0ATel: ${document.getElementById('tel').value}%0A%0A*IA USA VALORES DA IMAGEM COMO BASE:*%0A⚡ Energia (12.990 kWh) Hoje R$ 1.187,94 Com Ynova R$ 991,72%0A📄 Mínimo distribuidora (6 taxas) R$ 196,22%0A💼 Você paga R$ 991,72%0A%0A*SIMULAÇÃO ATUAL (IA somou a partir da base):*%0AConsumo: ${consumo} kWh%0AkWh compensáveis: ${kwh}%0ADE: R$ ${de} PARA: R$ ${para}%0A*Economia: R$ ${econ}/mês*%0A1 ano: R$ ${document.getElementById('ano1').value}%0A3 anos: R$ ${document.getElementById('ano3').value}%0A5 anos: R$ ${document.getElementById('ano5').value}%0A%0AAte 200% desconto ao ano`; window.open(`https://wa.me/${meuWhats}?text=${msg}`, '_blank'); };
 </script>
 
 <script>
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-function parseBR(s){ if(!s) return 0; let str=String(s).replace(/[^0-9,\.]/g,''); if(str.includes(',')){ const p=str.split(','); const dec=p.pop(); str=p.join('').replace(/\./g,'')+'.'+dec; } return parseFloat(str)||0; }
+// VALORES FIXOS DA SUA IMAGEM - IA SOMA A PARTIR DAQUI
+const FIXO = { 
+  consumo: 12990, 
+  energiaHoje: 1187.94, 
+  energiaYnova: 991.72, 
+  minimo: 196.22, 
+  vocePaga: 991.72, 
+  economia: 196.22, 
+  contaDe: 1187.94, 
+  contaPara: 991.72, 
+  ano1: 2354.64, 
+  ano3: 7063.92, 
+  ano5: 11773.20 
+};
 function formatBR2(n){ return n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function formatBR0(n){ return n.toLocaleString('pt-BR'); }
+function parseBR(s){ if(!s) return 0; let str=String(s).replace(/[^0-9,\.]/g,''); if(str.includes(',')){ const p=str.split(','); const dec=p.pop(); str=p.join('').replace(/\./g,'')+'.'+dec; } return parseFloat(str)||0; }
+
+let perfilDoc='PJ'; let docs={};
+const modelosDoc={
+PF:{titulo:'🔹 PESSOA FÍSICA (PF)', lista:'Documento de identidade vigente (RG ou CNH).', docs:[{id:'rg_pf', nome:'RG ou CNH - Obrigatório', obrig:true}]},
+PJ:{titulo:'🔹 PESSOA JURÍDICA (PJ)', lista:'Documento de identidade vigente (RG ou CNH) do representante legal; Contrato Social; Procuração, quando aplicável.', docs:[{id:'rg_rep', nome:'RG/CNH representante - Obrigatório', obrig:true},{id:'contrato', nome:'Contrato Social - Obrigatório', obrig:true},{id:'proc', nome:'Procuração quando aplicável', obrig:false}]},
+COND:{titulo:'🔹 CONDOMÍNIOS E CLUBES', lista:'Documento de identidade vigente (RG ou CNH) do representante legal; Ata de eleição ou nomeação do representante legal.', docs:[{id:'rg_rep_cond', nome:'RG/CNH representante - Obrigatório', obrig:true},{id:'ata', nome:'Ata eleição/nomeação - Obrigatório', obrig:true}]}
+};
+function setPerfilDoc(t){ perfilDoc=t; document.querySelectorAll('[id^=b]').forEach(b=>{ b.className='flex-1 border px-3 py-2 rounded-full text-xs font-bold'; }); document.getElementById('b'+t).className='flex-1 border-2 border-orange-500 bg-orange-50 px-3 py-2 rounded-full text-xs font-bold'; renderDocs(); }
+function renderDocs(){
+const modelo=modelosDoc[perfilDoc];
+document.getElementById('docConteudo').innerHTML=`<p class="font-black text-sm">${modelo.titulo}</p><p class="text-[12px] mt-1">${modelo.lista}</p>`;
+const lista=document.getElementById('listaDocs'); lista.innerHTML=''; docs={};
+modelo.docs.forEach(m=>{
+docs[m.id]={enviado:false, obrig:m.obrig};
+const div=document.createElement('div');
+div.className='border-2 border-dashed border-orange-200 rounded-xl p-3 bg-white';
+div.id='card_'+m.id;
+div.innerHTML=`<div class="flex justify-between items-center"><div><p class="font-bold text-xs">${m.nome}</p><p id="st_${m.id}" class="text-[11px] text-red-500">❌ Pendente - PDF preferencial</p></div><label class="bg-black text-white px-3 py-1 rounded-full text-xs cursor-pointer">Anexar<input type="file" class="hidden" onchange="uploadDocLocal('${m.id}', this)" accept=".pdf,.jpg,.png"></label></div>`;
+lista.appendChild(div);
+});
+updateDocs();
+}
+function uploadDocLocal(id,input){ const f=input.files[0]; if(!f) return; docs[id].enviado=true; docs[id].arquivo=f.name; document.getElementById('card_'+id).className='border-2 border-green-400 bg-green-50 rounded-xl p-3'; document.getElementById('st_'+id).textContent='✅ '+f.name; document.getElementById('st_'+id).className='text-[11px] text-green-600 font-bold'; updateDocs(); }
+function updateDocs(){ const obrig=Object.keys(docs).filter(k=>docs[k].obrig); const env=obrig.filter(k=>docs[k].enviado).length; document.getElementById('progDocs').textContent=`${env}/${obrig.length} documentos`; document.getElementById('statusDocs').textContent=env===obrig.length?'✅ Completo':'❌ Pendente'; }
+
+function aplicarFixos(){
+  document.getElementById('economiaApp').textContent=formatBR2(FIXO.economia);
+  document.getElementById('deApp').textContent=formatBR2(FIXO.contaDe);
+  document.getElementById('paraApp').textContent=formatBR2(FIXO.contaPara);
+  document.getElementById('kwhApp').textContent=formatBR0(FIXO.consumo);
+  document.getElementById('ano1App').textContent=formatBR2(FIXO.ano1);
+  document.getElementById('ano3App').textContent=formatBR2(FIXO.ano3);
+  document.getElementById('ano5App').textContent=formatBR2(FIXO.ano5);
+  document.getElementById('economiaMes').value=formatBR2(FIXO.economia);
+  document.getElementById('contaDe').value=formatBR2(FIXO.contaDe);
+  document.getElementById('contaPara').value=formatBR2(FIXO.contaPara);
+  document.getElementById('kwhComp').value=formatBR0(FIXO.consumo);
+  document.getElementById('consumo').value=formatBR0(FIXO.consumo);
+  document.getElementById('minimo').value=formatBR2(FIXO.minimo);
+  document.getElementById('ano1').value=formatBR2(FIXO.ano1);
+  document.getElementById('ano3').value=formatBR2(FIXO.ano3);
+  document.getElementById('ano5').value=formatBR2(FIXO.ano5);
+}
+
+// IA SOMA A PARTIR DOS VALORES DA SUA IMAGEM
 async function lerPDFConta(input){
 const file=input.files[0]; if(!file) return;
-document.getElementById('pdfStatus').textContent='⏳ Lendo fatura com IA...';
+document.getElementById('pdfStatus').textContent='⏳ Lendo fatura - IA soma a partir da base 12.990 kWh...';
 const reader=new FileReader();
 reader.onload=async function(e){
 try{
@@ -114,29 +229,44 @@ const pdf=await pdfjsLib.getDocument(typedarray).promise;
 let textoCompleto='';
 for(let i=1;i<=pdf.numPages;i++){ const page=await pdf.getPage(i); const content=await page.getTextContent(); const strings=content.items.map(item=>item.str); textoCompleto+=strings.join(' ')+' '; }
 document.getElementById('pdfTextoExtraido').innerText=textoCompleto;
-let consumo=0, valorTotal=0, tarifa=0;
-let mConsumo=textoCompleto.match(/(\d{1,3}(?:\.\d{3})*)\s*kWh/i) || textoCompleto.match(/Consumo.*?(\d+[\.,]?\d*)/i);
-if(mConsumo) consumo=parseBR(mConsumo[1]);
-let mValor=textoCompleto.match(/Valor\s*total\s*R?\$?\s*([\d\.\,]+)/i) || textoCompleto.match(/R\$\s*([\d]{1,3}(?:\.\d{3})*,\d{2})/);
-if(mValor) valorTotal=parseBR(mValor[1]);
-let mTarifa=textoCompleto.match(/([\d],\d{6})/);
-if(mTarifa) tarifa=parseBR(mTarifa[1]);
-if(!consumo || consumo<100) consumo=17933;
-if(!valorTotal) valorTotal=22823.83;
-if(!tarifa) tarifa=1.188698;
-document.getElementById('consumo').value=consumo.toLocaleString('pt-BR');
-document.getElementById('valorTotal').value=valorTotal.toLocaleString('pt-BR',{minimumFractionDigits:2});
-document.getElementById('tarifa').value=tarifa.toString().replace('.',',');
-iaRecalcular();
-document.getElementById('pdfStatus').textContent=`✅ IA leu: ${consumo} kWh | R$ ${valorTotal.toLocaleString('pt-BR')} | Economia R$ ${document.getElementById('economiaMes').value}/mês - Pronto para enviar no seu WhatsApp`;
-}catch(err){ document.getElementById('pdfStatus').textContent='❌ Erro: '+err.message; }
+let cons=0;
+let m=textoCompleto.match(/(\d{4,5})\s*kWh/i) || textoCompleto.match(/(\d{1,3}(?:\.\d{3})*)\s*kWh/i);
+if(m) cons=parseBR(m[1]);
+if(cons>0 && Math.abs(cons-FIXO.consumo)>100){
+  const fator = cons / FIXO.consumo;
+  const novaEconomia = FIXO.economia * fator;
+  const novaDe = FIXO.energiaHoje * fator;
+  const novaPara = FIXO.energiaYnova * fator;
+  const novoMinimo = FIXO.minimo * fator;
+  document.getElementById('economiaApp').textContent=formatBR2(novaEconomia);
+  document.getElementById('deApp').textContent=formatBR2(novaDe);
+  document.getElementById('paraApp').textContent=formatBR2(novaPara);
+  document.getElementById('kwhApp').textContent=formatBR0(cons);
+  document.getElementById('economiaMes').value=formatBR2(novaEconomia);
+  document.getElementById('contaDe').value=formatBR2(novaDe);
+  document.getElementById('contaPara').value=formatBR2(novaPara);
+  document.getElementById('kwhComp').value=formatBR0(cons);
+  document.getElementById('consumo').value=formatBR0(cons);
+  document.getElementById('minimo').value=formatBR2(novoMinimo);
+  document.getElementById('ano1').value=formatBR2(novaEconomia*12);
+  document.getElementById('ano3').value=formatBR2(novaEconomia*36);
+  document.getElementById('ano5').value=formatBR2(novaEconomia*60);
+  document.getElementById('ano1App').textContent=formatBR2(novaEconomia*12);
+  document.getElementById('ano3App').textContent=formatBR2(novaEconomia*36);
+  document.getElementById('ano5App').textContent=formatBR2(novaEconomia*60);
+  document.getElementById('pdfStatus').textContent=`✅ PDF lido: ${cons} kWh - IA somou a partir da base 12.990 kWh → Economia R$ ${formatBR2(novaEconomia)}/mês`;
+} else {
+  aplicarFixos();
+  document.getElementById('pdfStatus').textContent=`✅ PDF lido - mantendo base fixa da imagem: 12.990 kWh = R$ 196,22/mês`;
+}
+}catch(err){ aplicarFixos(); document.getElementById('pdfStatus').textContent='❌ Erro: '+err.message; }
 };
 reader.readAsArrayBuffer(file);
 }
-function iaRecalcular(){ const consumo=parseBR(document.getElementById('consumo').value); const tarifa=parseBR(document.getElementById('tarifa').value); const minimo=parseInt(document.getElementById('tipo').value)||100; const jaComp=parseBR(document.getElementById('kwhJaComp').value); const perc=parseFloat(document.getElementById('percDesconto').value)||20; let kwhComp=Math.max(0,consumo-minimo-jaComp); if(consumo>1000) kwhComp=Math.floor(consumo*0.8984)-jaComp; if(consumo===17933) kwhComp=16111; const valor=kwhComp*tarifa; const econ=valor*(perc/100); const para=valor-econ; document.getElementById('economiaMes').value=formatBR2(econ); document.getElementById('economiaApp').textContent=formatBR2(econ); document.getElementById('contaDe').value=formatBR2(valor); document.getElementById('deApp').textContent=formatBR2(valor); document.getElementById('contaPara').value=formatBR2(para); document.getElementById('paraApp').textContent=formatBR2(para); document.getElementById('kwhComp').value=kwhComp.toLocaleString('pt-BR'); document.getElementById('kwhApp').textContent=kwhComp.toLocaleString('pt-BR'); document.getElementById('lidosApp').textContent=consumo.toLocaleString('pt-BR'); document.getElementById('mesesApp').textContent=document.getElementById('meses').value; document.getElementById('ano1').value=formatBR2(econ*12); document.getElementById('ano3').value=formatBR2(econ*36); document.getElementById('ano5').value=formatBR2(econ*60); }
-function gerarPDF(){ const { jsPDF }=window.jspdf; const doc=new jsPDF(); doc.setFontSize(14); doc.text('YNOVA - Contrato Lei 14.300 - '+document.getElementById('nome').value,20,20); doc.setFontSize(11); doc.text(`Economia R$ ${document.getElementById('economiaMes').value}/mes - De R$ ${document.getElementById('contaDe').value} para R$ ${document.getElementById('contaPara').value} - ${document.getElementById('kwhComp').value} kWh - 1 ano R$ ${document.getElementById('ano1').value}`,20,30); doc.save(`Contrato_YNOVA_${(document.getElementById('nome').value||'cliente').replace(/\s+/g,'_')}.pdf`); }
-['consumo','tarifa','tipo','kwhJaComp','percDesconto'].forEach(id=>{ const el=document.getElementById(id); if(el) el.addEventListener('input', iaRecalcular); });
-iaRecalcular();
+
+function gerarPDF(){ const { jsPDF }=window.jspdf; const doc=new jsPDF(); doc.setFontSize(12); doc.text('YNOVA - Base 12.990 kWh - De onde vem o desconto? - '+document.getElementById('nome').value,20,20); doc.setFontSize(10); doc.text(`Hoje Energia 12.990kWh R$ 1187,94 Com Ynova R$ 991,72 Minimo R$ 196,22 Voce paga R$ 991,72`,20,28); doc.text(`Economia R$ ${document.getElementById('economiaMes').value}/mes 1 ano R$ ${document.getElementById('ano1').value} 3 anos R$ ${document.getElementById('ano3').value} 5 anos R$ ${document.getElementById('ano5').value} Ate 200% desconto ao ano`,20,36); doc.save('Contrato_YNOVA_12990kWh.pdf'); }
+
+setPerfilDoc('PJ'); aplicarFixos();
 </script>
 </body>
 </html>
